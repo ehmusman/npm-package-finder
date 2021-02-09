@@ -3,20 +3,23 @@ export interface RepositoriesState {
     error: string | null ;
     data: string[];
 }
-export enum ActionType { search_repositories,search_repositories_error, search_repositories_success}
+export enum ActionType { 
+    SEARCH_REPOSITORIES,
+    SEARCH_REPOSITORIES_ERROR, 
+    SEARCH_REPOSITORIES_SUCCESS}
 
-export type Actions   = ActionType.search_repositories | ActionType.search_repositories_error | ActionType.search_repositories_success
+export type Actions   = ActionType.SEARCH_REPOSITORIES | ActionType.SEARCH_REPOSITORIES_ERROR | ActionType.SEARCH_REPOSITORIES_SUCCESS
 
 export interface searchRepositoriesAction {
-    type: ActionType.search_repositories
+    type: ActionType.SEARCH_REPOSITORIES
 }
 
 export interface searchRepositoriesSuccessAction {
-    type: ActionType.search_repositories_success,
+    type: ActionType.SEARCH_REPOSITORIES_SUCCESS,
     payload: string[]
 }
 export interface searchRepositoriesErrorAction {
-    type: ActionType.search_repositories_error,
+    type: ActionType.SEARCH_REPOSITORIES_ERROR,
     payload: string
 }
 export type ActionsT = searchRepositoriesAction | searchRepositoriesErrorAction | searchRepositoriesSuccessAction
