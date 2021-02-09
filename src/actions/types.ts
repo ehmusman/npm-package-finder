@@ -22,5 +22,5 @@ export interface searchRepositoriesErrorAction {
     type: ActionType.SEARCH_REPOSITORIES_ERROR,
     payload: string
 }
-export type ActionsT = searchRepositoriesAction | searchRepositoriesErrorAction | searchRepositoriesSuccessAction
+export type Action = searchRepositoriesAction | searchRepositoriesErrorAction | searchRepositoriesSuccessAction
 

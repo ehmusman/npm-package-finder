@@ -1,6 +1,12 @@
-import { ActionsT, ActionType, RepositoriesState } from "./types";
+import { Action, ActionType, RepositoriesState } from "../actions/types";
 
-export const reducer = (state: RepositoriesState, action:ActionsT): RepositoriesState =>{
+const initialState: RepositoriesState = {
+loading: false,
+error: null,
+data: []
+}
+
+const reducer = (state: RepositoriesState = initialState, action:Action): RepositoriesState =>{
 switch(action.type){
     case ActionType.SEARCH_REPOSITORIES:
         return {loading: true, error: null, data: []}
@@ -12,3 +18,5 @@ switch(action.type){
         return state;
 }
 }
+
+export default reducer;
